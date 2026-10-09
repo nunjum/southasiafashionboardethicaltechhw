@@ -1,0 +1,8 @@
+country,city,legal_minimum_wage,estimated_living_wage,average_food_cost,average_housing_cost,currency,year,notes
+Bangladesh,Dhaka,12500,22500,8500,7000,BDT,2025,Fictional demonstration value
+Bangladesh,Chattogram,12000,20500,7800,6200,BDT,2025,Fictional demonstration value
+India,Tiruppur,14500,26500,9000,8500,INR,2025,Fictional demonstration value
+India,Mumbai,17000,31500,10500,12500,INR,2025,Fictional demonstration value
+India,Bengaluru,17000,31500,10500,12500,INR,2025,Fictional demonstration value
+Pakistan,Karachi,37000,68000,26000,22000,PKR,2025,Fictional demonstration value
+Pakistan,Lahore,35000,64000,24500,20500,PKR,2025,Fictional demonstration value
