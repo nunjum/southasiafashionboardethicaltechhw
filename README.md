@@ -17,7 +17,7 @@ python -m pip install -r requirements.txt
 From the project root, run:
 
 ```bash
-streamlit run app/dashboard.py
+streamlit run dashboard.py
 ```
 
 Streamlit will print a local browser address. Open that address to use the dashboard.

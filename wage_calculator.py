@@ -24,7 +24,8 @@ REQUIRED_COLUMNS = {
     "notes",
 }
 
-DEFAULT_DATA_PATH = Path(__file__).resolve().parents[1] / "data" / "wage_data.csv"
+PROJECT_ROOT = Path(__file__).resolve().parent
+DEFAULT_DATA_PATH = PROJECT_ROOT / "wage_data.csv"
 
 
 def load_wage_data(csv_path: str | Path = DEFAULT_DATA_PATH) -> list[dict[str, Any]]:

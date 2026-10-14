@@ -4,46 +4,29 @@ from __future__ import annotations
 
 from html import escape
 from pathlib import Path
-import sys
 
 
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
-if str(PROJECT_ROOT) not in sys.path:
-    sys.path.insert(0, str(PROJECT_ROOT))
+PROJECT_ROOT = Path(__file__).resolve().parent
 
 import pandas as pd
 import streamlit as st
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_error, r2_score
 
-try:
-    from .wage_calculator import (
-        available_cities,
-        available_countries,
-        calculate_wage_comparison,
-        find_wage_record,
-        load_wage_data,
-    )
-except ImportError:
-    from wage_calculator import (
-        available_cities,
-        available_countries,
-        calculate_wage_comparison,
-        find_wage_record,
-        load_wage_data,
-    )
-
-try:
-    from .currency_converter import get_exchange_rates, local_to_usd
-except ImportError:
-    from currency_converter import get_exchange_rates, local_to_usd
-
-from data.country_content import COUNTRY_CONTENT
-from data.news_sources import NEWS_SOURCES
-from data.timelines import TIMELINES
+from wage_calculator import (
+    available_cities,
+    available_countries,
+    calculate_wage_comparison,
+    find_wage_record,
+    load_wage_data,
+)
+from currency_converter import get_exchange_rates, local_to_usd
+from country_content import COUNTRY_CONTENT
+from news_sources import NEWS_SOURCES
+from timelines import TIMELINES
 
 
-TRADE_DATA_PATH = PROJECT_ROOT / "data" / "trade_data.csv"
+TRADE_DATA_PATH = PROJECT_ROOT / "trade_data.csv"
 TRADE_FEATURES = ["tariff_rate", "labor_cost", "eu_trade_preference"]
 TRADE_TARGET = "total_export_volume_usd"
 TRADE_REQUIRED_COLUMNS = {"country", "year", *TRADE_FEATURES, TRADE_TARGET}
